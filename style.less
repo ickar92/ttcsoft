@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Myriad Pro";
+    src: url(fonts/MyriadPro-Regular.otf); 
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -18,15 +23,17 @@ body {
 	background: #f6f2f2;
 	display: flex;
 }
+
 aside {
-	
 	flex: 30;
 	background: #000;
 }
+
 .form {
 	display: flex;
 	flex-direction: column;
 	margin: 15px;
+	margin-top: 66px;
 	&__buttons {
 			display: flex;
 	}
@@ -34,13 +41,18 @@ aside {
 			color: #cccccc;
 			font-family: "Myriad Pro";
 			font-size: 16px;
-			font-weight: 400;
 			line-height: 24px;
 			border: none;
 			cursor: pointer;
 	}
+	&__checkbox {
+		display: flex;
+	}
 }
-.send {
+.form > div {
+	margin-top: 10px;
+}
+#send {
 	background: #cd1f84;
 	margin-right: 5%;
 }
@@ -55,36 +67,36 @@ main {
 	flex-direction: column;
 	align-content: center;
 }
+
 nav {
 	width: 100%;
-	ul {
-			list-style: none;
-			display: flex;
-			padding: 0;
-			justify-content: space-around;
-			a {
-					color: #040404;
-					font-family: "Myriad Pro";
-					font-size: 14px;
-					font-weight: 400;
-					line-height: 16.8px;
-					text-transform: uppercase;
-					text-decoration: none;
-					display: block;
-					padding: 10px;
-					&:hover {
-							background: #e8a8a8;
-					}
-			}
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	padding: 0;
+	justify-content: space-around;
+	a {
+		color: #040404;
+		font-family: "Myriad Pro";
+		font-size: 14px;
+		line-height: 1.2;
+		text-transform: uppercase;
+		text-decoration: none;
+		display: block;
+		padding: 10px;
+		&:hover {
+				background: #e8a8a8;
+		}
 	}
 }
+
 .content {
 	display: flex;
-	// justify-content: space-around;
 	align-items: flex-start;
 	flex-wrap: wrap;
 	margin: 10px;
-	// margin-top: 30%;
 	.block {
 			min-width: 140px;
 			max-height: 210px;
@@ -96,12 +108,17 @@ nav {
 			line-height: 18px;
 			padding: 15px;
 			margin: 10px;
-			flex: 1;
+			margin-top: 0;
+			width: 20%;
 	}
 }
 
+.flex {
+	display: flex;
+	justify-content: center;
+}
 
-input[type="text"] {
+.input {
 	background-color: #000; 
 	max-width: 260px;
 	width: 100%;
@@ -112,24 +129,68 @@ input[type="text"] {
 	line-height: 24px;
 	border: 1px solid #ccc;
 	padding-left: 5%;
+	margin-top: 10px;
+	outline: none;
 }
-.ch {
-	display: flex;
+
+.input-valid {
+	border-color: green;
 }
+.input-invalid {
+	border-color: red;
+}
+
+
 label {
 	color: #cccccc;
 	font-family: "Myriad Pro";
-	font-size: 15px;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 24px; 
 	display: block;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    // width: 120px;
+    top: 36px;
+    left: 0;
+    background-color: #e8a8a8;
+	min-width: 160px;
+	
+}
+.submenu a {
+	text-transform: none;
+}
+.submenu a:hover {
+	background: #cccccc;
+}
+ul.menu > li {
+	position: relative;
+}
+ul.menu > li:hover > ul.submenu {
+    display: block;
+}
+
+.pagination {
+	text-align: center;
+}
+.pagination a {
+	text-decoration: none;
+}
+.pagination a:hover {
+	color: red;
 }
 
 @media screen and (max-width: 960px) {
 	aside {
 			display: none;
 	}
-	main {
+	.container {
 			max-width: 96%;
+			width: 100%;
+	}
+	.content .block {
+		width: 22%;
 	}
 }

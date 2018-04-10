@@ -7,29 +7,29 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="main.js"></script>
 </head>
 
 <body>
 	<div class="container">
-
 		<aside>
-			<form class="form">
-				<input type="text" placeholder="Текстовое поле">
-				<input type="text" placeholder="**********">
-				<div class="ch">
-					<input type="checkbox" id="chbx">
+			<form novalidate id="form" class="form">
+				<input class="input input-text" type="text" required placeholder="Текстовое поле">
+				<input class="input input-password" type="password" required placeholder="Пароль">
+
+				<div class="form__checkbox">
+					<input type="checkbox" required id="chbx">
 					<label for="chbx">Я согласен с пользовательским соглашением</label>
 				</div>
 				<div class="form__buttons">
-					<button class="form__btn send">Отправить</button>
+					<button type="submit" class="form__btn" id="send">Отправить</button>
 					<button class="form__btn reset">Сбросить</button>
 				</div>
-
 			</form>
 		</aside>
 		<main>
 			<nav>
-				<ul>
+				<ul class="menu">
 					<li>
 						<a href="#">знакомства</a>
 					</li>
@@ -43,10 +43,13 @@
 								<a href=#>Написать сообщение</a>
 							</li>
 							<li>
-								<a href=#>Sudmenu 1</a>
+								<a href=#>Чаты</a>
 							</li>
 							<li>
-								<a href=#>Sudmenu 1</a>
+								<a href=#>Симпатии</a>
+							</li>
+							<li>
+								<a href=#>Опросы</a>
 							</li>
 						</ul>
 					</li>
@@ -72,8 +75,12 @@
 				<div class="block">Здесь краткое описание. Высота блока зависит от контента, но не более 210пх. Количество таких элементов может быть любым.</div>
 				<div class="block">Здесь краткое описание. Высота блока зависит от контента, но не более 210пх.</div>
 			</section>
+			<section class="pagination">
+				<a href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+			</section>
 		</main>
-
 	</div>
 </body>
 
